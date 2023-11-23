@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #66CCFF;
+  margin: 0;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.score-board {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.score {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.score h2 {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.player-x h2 {
+  background-color: #FFCC00;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.player-o h2 {
+  background-color: #FF4444;
+}
+
+.score-value {
+  font-size: 36px;
+  text-align: center;
+  padding: 20px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tile {
+  width: 100px;
+  height: 100px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #333333;
+  border-radius: 10px;
+}
+
+.empty {
+  background: #E0E0E0;
+}
+
+.game-controls {
+  display: flex;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.previous {
+  background-color: #FFDD57;
+}
+
+.reset {
+  background-color: #FF6B6B;
+  color: white;
+}
+
+/* Add responsiveness for a better layout on different screens */
+@media (max-width: 600px) {
+  .game-container {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .score-board {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .score {
+    margin-bottom: 10px;
+  }
+
+  .game-controls {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
